@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Searchpage from './searchpage';
-import 'antd/dist/antd.css';
-import Login from './Login';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Message from './components/message';
+// import '../styles/global.css'
 
+// import Layout from '../containers/Layout'
+// import Home from '../pages/Home'
+// import Login from '../containers/Login'
+// import RecoveryPassword from '../containers/RecoveryPassword'
+// import NotFound from '../pages/NotFound'
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <div className="App">        
+    <Router>
+      {/* <Layout> */}
         <Routes>
-          <Route path="/">
-            <Login />
-          </Route>
-          <Route path="/home">
-            <Searchpage />
-          </Route>
+          <Route exact path="/" element={<Searchpage/>}/>
+          <Route exact path="/message" element={<Message/>}/>
+          {/* <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/recovery-password" element={<RecoveryPassword/>}/>
+          <Route path="*" element={<NotFound/>}/> */}
         </Routes>
-      </div>
-    </BrowserRouter>
+      {/* </Layout> */}
+    </Router>
   );
 }
 
