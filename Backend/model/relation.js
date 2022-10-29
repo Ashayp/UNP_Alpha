@@ -18,7 +18,7 @@ const Relation = sequelize.define("relation", {
         primaryKey: true
     },
     since:{
-        type: Sequelize.STRING,
+        type: Sequelize.DATEONLY,
         allowNull: true,
     }
 }, 
