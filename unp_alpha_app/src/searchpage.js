@@ -3,6 +3,7 @@ import './App.css';
 import Search from './components/search';
 import 'antd/dist/antd.css';
 import { Layout, Menu } from 'antd';
+import { Link } from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
 
 function searchpage() {
@@ -54,8 +55,8 @@ function searchpage() {
         <Menu.Item>                 
           Profile
         </Menu.Item>
-        <Menu.Item  >                 
-          Message
+        <Menu.Item  > 
+        <Link to={'/message'}>Message</Link>                
         </Menu.Item>
         <Menu.Item style={{
         position: 'absolute',
