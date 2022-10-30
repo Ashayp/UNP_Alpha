@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './App.css';
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
@@ -10,8 +11,21 @@ import Searchpage from './searchpage';
 import 'antd/dist/antd.css';
 import Login from './Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+=======
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Searchpage from './searchpage';
+import Message from './components/message';
+// import '../styles/global.css'
+>>>>>>> a02bbd56dadf4c9555dce91c307e4dfada468fc8
 
+// import Layout from '../containers/Layout'
+// import Home from '../pages/Home'
+// import Login from '../containers/Login'
+// import RecoveryPassword from '../containers/RecoveryPassword'
+// import NotFound from '../pages/NotFound'
 
+<<<<<<< HEAD
 function Signup() {
   const navigate = useNavigate();
 
@@ -40,6 +54,9 @@ import Message from './components/message';
 =======
 const App = () => {
 >>>>>>> 05eaafc (added routes for message)
+=======
+const App = () => {
+>>>>>>> a02bbd56dadf4c9555dce91c307e4dfada468fc8
   return (
     <Router>
       {/* <Layout> */}
