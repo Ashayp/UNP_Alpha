@@ -9,7 +9,7 @@ function Search() {
   const [data, setData] = useState();
   const onFinish = (e) => {
     console.log("reached here",e)
-    axios.post('http://localhost:5000/kid/filters',e)
+    axios.post('http://localhost:8080/kid/filters',e)
     .then(response => {
       console.log("response", response.data)
       setData( response.data)

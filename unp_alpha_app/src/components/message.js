@@ -31,7 +31,7 @@ function Search() {
 <b>message: </b>{each.message}
 </div>
 <div className='receive'>
-<b>received: {each.receiver}</b>
+<b>received:</b> {each.receiver}
 </div>
 
 <br />
