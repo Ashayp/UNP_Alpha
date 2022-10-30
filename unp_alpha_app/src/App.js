@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.css';
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
@@ -21,21 +22,36 @@ function Signup() {
     navigate('/SignUpForm');
   };
 
+=======
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Searchpage from './searchpage';
+import Message from './components/message';
+// import '../styles/global.css'
+>>>>>>> 05eaafc (added routes for message)
 
+// import Layout from '../containers/Layout'
+// import Home from '../pages/Home'
+// import Login from '../containers/Login'
+// import RecoveryPassword from '../containers/RecoveryPassword'
+// import NotFound from '../pages/NotFound'
 
+<<<<<<< HEAD
+=======
+const App = () => {
+>>>>>>> 05eaafc (added routes for message)
   return (
-    <BrowserRouter>
-      <div className="App">        
+    <Router>
+      {/* <Layout> */}
         <Routes>
-          <Route path="/">
-            <Login />
-          </Route>
-          <Route path="/home">
-            <Searchpage />
-          </Route>
+          <Route exact path="/" element={<Searchpage/>}/>
+          <Route exact path="/message" element={<Message/>}/>
+          {/* <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/recovery-password" element={<RecoveryPassword/>}/>
+          <Route path="*" element={<NotFound/>}/> */}
         </Routes>
-      </div>
-    </BrowserRouter>
+      {/* </Layout> */}
+    </Router>
   );
 }
 function Signin() {

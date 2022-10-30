@@ -9,6 +9,7 @@ function searchpage() {
   // useEffect(() => {
   //   document.title = 'Search Page';
   // });
+  console.log("reached here")
   return (
     <div className="App">
       {/* <Search/> */}
@@ -52,6 +53,9 @@ function searchpage() {
         </Menu.Item>
         <Menu.Item>                 
           Profile
+        </Menu.Item>
+        <Menu.Item  >                 
+          Message
         </Menu.Item>
         <Menu.Item style={{
         position: 'absolute',
