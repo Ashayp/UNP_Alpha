@@ -56,4 +56,10 @@
     font-family: Arial;
     text-align: center;
   }
+
+.reg-form{
+  border:rgb(127, 127, 127) solid 1px;
+  margin: 50px;
+  padding: 10px;
+}
    
