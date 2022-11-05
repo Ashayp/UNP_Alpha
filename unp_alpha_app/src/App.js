@@ -10,6 +10,8 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const { Header, Content, Footer, Sider } = Layout;
 
 function App() {

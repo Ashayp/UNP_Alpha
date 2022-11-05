@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 } */
+
+/* table{
+  padding: 10px;
+  border: 1px solid black;
+}
+
+td, th{
+  padding: 10px;
+  border: 1px solid black;
+} */
+
+.request-table{
+  margin-top: 20px;
+  margin: 10px;
+  padding: 5px;
+}
