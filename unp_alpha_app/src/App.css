@@ -57,6 +57,12 @@
     text-align: center;
   }
 
+.homepage{
+  /* background-color: rgb(231, 231, 231); */
+  padding: 10px;
+  height: 100%;
+}
+
 .reg-form{
   border:rgb(127, 127, 127) solid 1px;
   margin: 50px;

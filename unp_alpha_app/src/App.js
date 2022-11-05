@@ -45,7 +45,7 @@ function Signin() {
 
 function App() {
 return ( 
-<div>
+<div class="homepage">
       <div>
         <nav>
           <ul>

@@ -114,10 +114,6 @@ export default function SignInForm() {
 
   return (
     <div className="form">
-      <div>
-        <h1>User registration</h1>
-      </div>
-
       {/* Calling to the methods */}
       <div className="messages">
         {errorMessage()}
@@ -125,6 +121,9 @@ export default function SignInForm() {
       </div>
 
       <form class="reg-form">
+        <div>
+          <h1>User registration</h1>
+        </div>
         {/* Labels and inputs for form data */}
         <label className="label">First Name</label>
         <input
