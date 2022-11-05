@@ -4,7 +4,7 @@
   "description": "Backend for group project of group 9",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
@@ -19,9 +19,12 @@
     "crypto-js": "^4.1.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "faker": "^6.6.6",
+    "jest": "^29.2.2",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.0"
+    "sequelize": "^6.25.0",
+    "supertest": "^6.3.1"
   }
 }
