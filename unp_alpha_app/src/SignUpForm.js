@@ -169,7 +169,7 @@ export default function SignInForm() {
         />
         <div class="form-group">
           <button onClick={handleSubmit} class="btn btn-success" type="submit">
-            Submit
+            Register
           </button>
         </div>
       </form>
