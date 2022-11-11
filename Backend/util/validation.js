@@ -1,8 +1,6 @@
 const e = require("express");
 
-const validateParent = (parent) => {
-    
-};
+const validateParent = (parent) => {};
 
 const validateKid = (kid) => {};
 
@@ -45,10 +43,28 @@ let checkString = (strVal, varName) => {
   return strVal;
 };
 
+const validateUser = (req, res, next) => {
+  const token = req.header("Authorization").replace("Bearer ", "");
+  if (token) {
+    jwt.verify(token, config.secret, (err, decoded) => {
+      if (err) {
+        res.status(401);
+        res.send("Invalid Token");
+      } else {
+        console.log(decoded, "at decoded");
+        req.usr = decoded;
+        next();
+      }
+    });
+  } else {
+    res.send("No token");
+  }
+};
+
 module.exports = {
-    validateParent,
-    validateKid,
-    validateCreds,
-    checkId,
-    checkString
-}
+  validateParent,
+  validateKid,
+  validateCreds,
+  checkId,
+  checkString,
+};

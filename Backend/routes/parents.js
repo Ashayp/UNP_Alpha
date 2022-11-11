@@ -21,7 +21,7 @@ router
 
   router
   .route("/location/all")
-  .get(async (req, res) => {
+  .post(async (req, res) => {
     try {
       console.log('reached here1')
       let message = await parentsData.serachAllParentByLocation(req.body);
@@ -34,13 +34,6 @@ router
 //  .get(async (req, res) => {
 //    res.status(404).json(e);
 //  });
-
-
-
-  
-
-
-
 
 
 module.exports = router;

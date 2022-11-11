@@ -94,20 +94,13 @@ let login = async (postData) => {
   console.log(postData);
 
   let data = await users.findOne({ where: { username: postData.username } });
-  let decryptedpassword = helper.decryptAES(data.password);
+  let decryptedpassword = await helper.decryptAES(data.password);
   if (data === null) {
     throw "User does not exist";
   } else if (decryptedpassword !== postData.password) {
     throw "Invalid username/password";
   }
-  let token;
-  try {
-     token = jwt.sign({ id: postData.username }, config.key.toString(), {
-      expiresIn: 86400,
-    });
-  } catch (e) {
-    console.log();
-  }
+  
 
   let profile;
   let userInfo = await users.findOne({
@@ -115,15 +108,24 @@ let login = async (postData) => {
   });
   if (userInfo.role === "parent") {
     profile = await parent.findOne({
-      where: { username: postData.username },
+      where: { email: postData.username },
     });
   } else {
     profile = await kid.findOne({
       where: { username: postData.username },
     });
   }
-  profile.id = helper.encryptAES(profile.id);
+  console.log(helper.encryptAES(profile.id.toString()));
+  profile['id'] = helper.encryptAES(profile.id.toString())
 
+  let token;
+  try {
+     token = jwt.sign({ id: postData.username, type: userInfo.role, userid: profile.id }, config.key.toString(), {
+      expiresIn: 86400,
+    });
+  } catch (e) {
+    console.log();
+  }
   let message = {
     message: "Welcome " + postData.username + "!",
     profile: profile,

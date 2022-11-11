@@ -5,10 +5,8 @@ const cors = require("cors");
 const config = require("./config");
 const dbconfig = require("./config/settings.json");
 
-const sequelize = require("./util/database");
-const users = require("./model/parent");
-
 const configRoutes = require('./routes/index.route');
+const jwt = require('./middleware/jwt');
 //sequelize
 const app = express();
 app.use(express.json());
@@ -22,6 +20,8 @@ app.use(cors({
 }));
 // const routes = require("./routes/index.route");
 // app.use(routes);
+
+
 
 configRoutes(app);
 

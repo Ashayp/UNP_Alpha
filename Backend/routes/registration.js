@@ -17,12 +17,8 @@ router
     }
   })
   .get(async (req, res) => {
-    res.status(404).json({"Error": "Not found"});
-<<<<<<< HEAD
-    });
-=======
+    res.status(404).json({ Error: "Not found" });
   });
->>>>>>> 06a6695d34ed6f99562a617b4290e727319ba009
 
 router
   .route("/signup/kid")
@@ -35,12 +31,8 @@ router
     }
   })
   .get(async (req, res) => {
-    res.status(404).json({"Error": "Not found"});
-<<<<<<< HEAD
-    });
-=======
+    res.status(404).json({ Error: "Not found" });
   });
->>>>>>> 06a6695d34ed6f99562a617b4290e727319ba009
 
 router
   .route("/login")
@@ -51,11 +43,13 @@ router
       // req.session.username = req.body.username;
       res.send(message);
     } catch (error) {
+      console.log(error);
       res.send({ error: error });
     }
   })
   .get(async (req, res) => {
-    res.status(404).json({"Error": "Not found"});
+    console.log(e);
+    res.status(404).json({ Error: "Not found" });
   });
 
 router.route("/getAllUsers").get(async (req, res) => {
