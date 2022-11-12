@@ -8,6 +8,7 @@ import './App.css';
 import Searchpage from './searchpage';
 import 'antd/dist/antd.css';
 import Login from './Login';
+import ContactUs from './mail.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
@@ -44,7 +45,6 @@ function Signin() {
 
 
 
-
 function App() {
 return ( 
 <div>
@@ -60,6 +60,9 @@ return (
             <li>
               <Link to="/GetDetailsForm">Get Details</Link>
             </li>
+            <li>
+              <Link to="/ContactUs">Get Details</Link>
+            </li>
           </ul>
         </nav>
 
@@ -67,6 +70,7 @@ return (
           <Route path="/SignInForm" element={<SignInForm />} />
           <Route path="/SignUpForm" element={<SignUpForm />} />
           <Route path="/GetDetailsForm" element={<GetDetailsForm />} />
+          <Route path="/EmailContactForm" element={<ContactUs />} />
         </Routes>
       </div>
     </div>
