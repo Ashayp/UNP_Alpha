@@ -148,6 +148,7 @@ value={password} type="password" />
 <button onClick={handleSubmit} className="btn" type="submit">
 Submit
 </button>
+<label className="label"><a href='/login'>Have an Account? Log in</a></label>
 </form>
 </div>
 );

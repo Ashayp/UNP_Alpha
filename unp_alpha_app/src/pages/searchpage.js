@@ -67,6 +67,7 @@ const changeTab = (tabName) => {
         position: 'absolute',
         bottom: 0,
         zIndex: 1,
+        marginLeft: 20,
         transition: 'all 0.2s',
     }}
     >                    
@@ -84,7 +85,7 @@ const changeTab = (tabName) => {
           className="site-layout-background"
           style={{
             padding: 24,
-            minHeight: '90vh',
+            minHeight: '88vh',
           }}
         >
           {/* content */}

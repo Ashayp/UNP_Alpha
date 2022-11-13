@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import axios from 'axios';
 import AuthContext from '../context/AuthContext';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 export default function SignInForm() {
 
@@ -11,7 +12,7 @@ const [password, setPassword] = useState('');
 
 const [response, setResponse] = useState('');
 
-
+const nav= useNavigate()
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
@@ -44,6 +45,7 @@ setError(true);
         "username": name,
         "password": password    
      } 
+     nav('/home');
      axios.post("http://localhost:8080/register/login", body)
      .then(res=>{                        
         handleResponse(res.data);

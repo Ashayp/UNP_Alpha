@@ -21,7 +21,7 @@ function App() {
   return (
     // <BrowserRouter>
       <Routes >
-        <Route path="/" element={<SignInForm />}/>            
+        <Route path="/" element={<SignUpForm />}/>            
           <Route exact path="/register" element={<SignUpForm />}/>
           {/* <Route exact path="/home" element={user ? <Searchpage /> : <SignInForm />}/> */}
           <Route exact path="/home" element={<Searchpage />}/>
