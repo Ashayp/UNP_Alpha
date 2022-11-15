@@ -65,6 +65,31 @@ router.route("/getParentById/:id").get(async (req, res) => {
   res.send(data);
 });
 
+router.delete('/deleteKid/:username', (req, res) => {
+  function (req,res) {    
+    model.destroy({
+        where: {
+            id: req.params.id
+        }
+    }}})
+    .then(function (deletedKid) {
+        if(deletedRecord === 1){
+            res.status(200).json({message:"Deleted successfully"});          
+        }
+        else
+        {
+            res.status(404).json({message:"record not found"})
+        }
+    })
+    .catch(function (error){
+        res.status(500).json(error);
+    });
+
+
+    router.route("/deleteKid/:id").get(async (req, res) => {
+      let data = await parent.findOne({ where:{ id: req.params.id}});
+      res.deletedRecord(parent.kid.data);
+    });    
 //Creates a new post
 router.post("/login", async (req, res) => {});
 

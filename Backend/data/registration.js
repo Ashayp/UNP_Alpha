@@ -90,6 +90,32 @@ let registerKid = async (postData) => {
   return "Kid registered succussefully";
 };
 
+let deleteKid = async (postData) => {
+  console.log(postData);
+  let users = await users.findByPK({ where: { username: postData.username } });
+  //const project = await Project.findByPk(123);
+    if (users === null) {
+      console.log('Not found!');
+    } else {
+      console.log(username instanceof users); // true
+  // Its primary key is 123
+}
+  let user = await users.findOne({ where: { username: postData.username } });
+  console.log(user);
+  if (user !== null) {
+    throw "Username " + postData.username + " already exists";
+  }
+
+ 
+
+  await Parent_kid_mapping.create({
+    parent_id: parentInserted.id,
+    kid_id: kidInserted.id,
+  });
+
+  return "Kid registered succussefully";
+};
+
 let login = async (postData) => {
   console.log(postData);
 
