@@ -54,10 +54,10 @@ router
 
   router
   .route("/getparents")
-  .get(async (req, res) => {
+  .get(async (res) => {
     try {
     console.log("View parents profiles")
-      let message = await parentsData.getParentProfiles(req.body);
+      let message = await parentsData.getParentProfiles();
       res.send({ message: message });
     } catch (error) {
       console.log(error);

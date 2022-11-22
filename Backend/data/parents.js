@@ -73,14 +73,8 @@ const submitKidDetails = async(postData)=>{
   return "Kid data submitted sucessfully";
 };
 
-const getParentProfiles = async (postData) => {
-  try {
-    let parentInfo = await parent.findAll({ });
-    if (!parentInfo) throw "Could not find parents!";
-    return parentInfo;
-  } catch (error) {
-    return error;
-  }
+const getParentProfiles = async () => {
+  return parent.findAll();
 };
 
 module.exports = {

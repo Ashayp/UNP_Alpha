@@ -14,7 +14,7 @@ class UserCards extends Component {
 
   loadData = () => {
     const { per, page, data } = this.state;
-    const endpoint = `https://randomuser.me/api/?nat=us&results=${per}&page=${page}`;
+    const endpoint = `http://localhost:8080/api/parents/getparents=${per}&page=${page}`;
     fetch(endpoint)
       .then(response => response.json())
       .then(json => {
