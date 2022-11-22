@@ -1,5 +1,6 @@
 import { useState } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
+import { useCookies } from 'react-cookie';
 export default function GetDetailsForm() {
 
 // States for registration
@@ -12,7 +13,13 @@ const [ethnicity, setEthnicity] = useState('');
 const [profilevisibility, setProfileVisibility] = useState('');
 
 const [response, setResponse] = useState('');
-
+const [cookies, setCookie] = useCookies(['user']);
+  
+  const config = {
+    headers:{
+      "Authorization": cookies.token
+    }
+  };
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
@@ -59,15 +66,31 @@ const handleResponse = (e) => {
     };
 
 // Handling the form submission
-const handleSubmit = async (e) => {
-e.preventDefault();
-if (schoolname === '' || street === '' || location === '' || grade === '' || ethnicity === '') {
-setError(true);
-} else {
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (street === '' || schoolname === '' || location === '' || ethnicity === ''  || profilevisibility === '' || grade === '') {
+    setError(true);
+    } else {
+        let body = {
+            "username": 'kavi',
+            "street": street,
+            "schoolname": schoolname,
+            "location": location,
+            "ethnicity": ethnicity,
+            "profilevisibility": profilevisibility,
+            "grade": grade
+        
+         } 
+         axios.post("http://localhost:8080/api/parents/submitdetails", body, config)
+         .then(res=>{
+            handleResponse(res.data);
+            setSubmitted(true);
+            setError(false);
+         })
     setSubmitted(true);
     setError(false);
-}
-};
+    }
+    };
 
 // Showing success message
 const successMessage = () => {

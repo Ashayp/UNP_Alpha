@@ -11,19 +11,19 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const { Header, Content, Footer, Sider } = Layout;
 import './App.css';
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
 import GetDetailsForm from "./getdetails";
 import {Link, useNavigate} from 'react-router-dom';
-import React, { useState } from 'react';
 import './App.css';
 import Searchpage from './searchpage';
 import 'antd/dist/antd.css';
 import Login from './Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+const { Header, Content, Footer, Sider } = Layout;
+
 
 
 function Signup() {
