@@ -16,7 +16,7 @@ router
       res.send({error: error});
     }
   })
-  .get(async (req, res) => {
+  .post(async (req, res) => {
     res.status(404).json(e);
   });
 
