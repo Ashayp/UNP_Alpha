@@ -9,7 +9,7 @@ module.exports = {
   registration: registrationData,
   parents: parentsData,
   kid: kidData,
-  relation: friend_requests
+  relation: friend_requests,
   messages: messageData,
   conversations :conversationData
 };

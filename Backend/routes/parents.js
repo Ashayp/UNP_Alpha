@@ -72,6 +72,7 @@ router.route("/getkids/:id").get(async (req, res) => {
 
 router.route("/updatekid/:id").post(async (req, res) => {
   try {
+    console.log("update");
     let result = await kidsData.updateKidById(req.params.id, req.body);
     res.json(result);
   } catch (e) {

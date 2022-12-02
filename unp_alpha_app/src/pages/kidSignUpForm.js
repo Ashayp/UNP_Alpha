@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 
-
 export default function SignInForm() {
   // States for registration
   const [firstname, setFirstName] = useState("");
@@ -116,13 +115,13 @@ export default function SignInForm() {
         parentid: cookies.user.id
       };
       console.log(body);
-      axios
-        .post("http://localhost:8080/register/signup/kid", body)
-        .then((res) => {
-          handleResponse(res.data);
-          setSubmitted(true);
-          setError(false);
-        });
+      // axios
+      //   .post("http://localhost:8080/register/signup/kid", body)
+      //   .then((res) => {
+      //     handleResponse(res.data);
+      //     setSubmitted(true);
+      //     setError(false);
+      //   });
     }
   };
 
@@ -184,15 +183,18 @@ export default function SignInForm() {
         />
 
         <label className="label">Gender</label>
-        <input
+        <select
           onChange={handleGender}
           className="input"
           value={gender}
-          type="text"
-        />
+        >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="NA">Prefer not to say</option>
+        </select>
 
         <label className="label">Age</label>
-        <input onChange={handleAge} className="input" value={age} type="text" />
+        <input onChange={handleAge} className="input" value={age} type="number"  min="3" max="100"/>
 
         <label className="label">User Name</label>
         <input
@@ -239,7 +241,7 @@ export default function SignInForm() {
           onChange={handleGrade}
           className="input"
           value={grade}
-          type="text"
+          type="number" min="1" max="10"
         />
 
         <label className="label">Ethnicity</label>

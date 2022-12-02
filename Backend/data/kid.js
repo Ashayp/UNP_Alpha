@@ -50,21 +50,14 @@ const serachKidAgeByName = async (postData) => {
 
 const getKids = async (id) => {
   let data = await kid.findAll({ where: { parentid: id } });
-  console.log("Kids ",data);
+  console.log("Kids ", data);
   return data;
 };
 
 const updateKidById = async (id, body) => {
-  try {
-    let parentInfo = await parent.update(
-      body,
-      {where: {id:id}}
-    );
-    if (!parentInfo) throw "Could not update parent of that id!";
-    return parentInfo;
-  } catch (error) {
-    return error;
-  }
+  let parentInfo = await kid.update(body, { where: { parentid: id } });
+  if (!parentInfo) throw "Could not update parent of that id!";
+  return parentInfo;
 };
 
 module.exports = {
@@ -72,5 +65,5 @@ module.exports = {
   serachKidByLocation,
   serachKidAgeByName,
   getKids,
-  updateKidById
+  updateKidById,
 };
