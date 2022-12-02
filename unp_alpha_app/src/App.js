@@ -10,6 +10,11 @@ import './App.css';
 import Searchpage from './pages/searchpage';
 import InboxPage from './pages/inbox';
 
+import ViewFriends from './pages/viewFriendsPage';
+import KidSignUp from './pages/kidSignUpForm';
+
+
+
 import 'antd/dist/antd.css';
 import Messenger from './components/messenger/Messenger';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -23,6 +28,7 @@ function App() {
       <Routes >
         <Route path="/" element={<SignInForm />}/>            
           <Route exact path="/register" element={<SignUpForm />}/>
+          <Route exact path="/registerkid" element={<KidSignUp />}/>
           {/* <Route exact path="/home" element={user ? <Searchpage /> : <SignInForm />}/> */}
           <Route exact path="/home" element={user ? <Searchpage /> : <SignInForm />}/>
           {/* <Route exact path="/profile/:username" element={user ? <Profilepage /> : <SignInForm />}/> */}
