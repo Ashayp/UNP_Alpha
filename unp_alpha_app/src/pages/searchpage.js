@@ -21,8 +21,11 @@ function Searchpage() {
           style={{
             padding: 0,
             height: "10vh",
+            color: "white"
           }}
-        />
+          >
+          
+        </Header>
         <Layout>
           <Sider
             breakpoint="lg"
@@ -52,7 +55,9 @@ function Searchpage() {
               <Menu.Item>
                 <Link to="/ViewFriends">View Friends </Link>
               </Menu.Item>
-
+              <Menu.Item>
+                <Link to="/registerkid">Register Kid </Link>
+              </Menu.Item>
               <Menu.Item key="messenger">
                 <Link to="/messenger">Messenger </Link>
               </Menu.Item>

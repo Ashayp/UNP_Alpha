@@ -27,6 +27,7 @@ function App() {
 
   const [cookies, setCookie] = useCookies(["user"]);
   const user = cookies.user;
+  console.log("User ", user);
   return (
     // <BrowserRouter>
       <Routes >

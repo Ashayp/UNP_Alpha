@@ -27,12 +27,14 @@ exports.validateUser = (req, res, next) => {
 exports.authorizeUser = async (req, res, next) => {
   let data = await this.getDataFromToken(req.header("Authorization"));
   console.log(data);
-  if (data.type === "parent") {
-    let parentData = await parent.findOne({ where: { email: data.id } });
-    console.log("authorize User ", parentData.isEmailVerified);
-    if (!parentData.isEmailVerified) {
-      res.json({ Error: "Please verify your Email" });
-      return;
+  if (data) {
+    if (data.type === "parent") {
+      let parentData = await parent.findOne({ where: { email: data.id } });
+      console.log("authorize User ", parentData.isEmailVerified);
+      if (!parentData.isEmailVerified) {
+        res.json({ Error: "Please verify your Email" });
+        return;
+      }
     }
   }
   next();

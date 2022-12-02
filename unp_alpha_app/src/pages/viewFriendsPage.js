@@ -20,7 +20,9 @@ function viewFriendsPage() {
             padding: 0,
             height: "10vh",
           }}
-        />
+        >
+          <p>UNP_ALPHA</p>
+        </Header>
         <Layout>
           <Sider
             breakpoint="lg"
@@ -50,7 +52,9 @@ function viewFriendsPage() {
               <Menu.Item>
                 <Link to="/ViewFriends">View Friends </Link>
               </Menu.Item>
-
+              <Menu.Item>
+                <Link to="/registerkid">Register Kid </Link>
+              </Menu.Item>
               <Menu.Item key="messenger">
                 <Link to="/messenger">Messenger </Link>
               </Menu.Item>

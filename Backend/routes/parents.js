@@ -43,6 +43,18 @@ router.route("/getparent/:id").get(async (req, res) => {
   try {
     let result = await parentsData.serachParentById(req.params.id);
     res.json(result);
+    return;
+  } catch (e) {
+    console.log(e);
+    res.send({ error: e });
+  }
+});
+
+router.route("/getparentByUserId/:id").get(async (req, res) => {
+  try {
+    let result = await parentsData.serachParentByUserId(req.params.id);
+    res.json(result);
+    return;
   } catch (e) {
     console.log(e);
     res.send({ error: e });

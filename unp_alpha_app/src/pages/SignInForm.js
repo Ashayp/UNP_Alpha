@@ -15,7 +15,16 @@ export default function SignInForm() {
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
-  const [cookies, setCookie] = useCookies(["user"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
+  const signout = () => {
+    if (cookies) {
+      removeCookie("user");
+      removeCookie("token");
+    }
+  }
+
+  signout();
 
   // Handling the name change
   const handleName = (e) => {
@@ -92,38 +101,38 @@ export default function SignInForm() {
   return (
     <div className="form form-login">
       <div className="login-form-sign">
-      <div>
-        <h2>LOGIN</h2>
-      </div>
-
-      <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-      </div>
-
-      <form>
-        <label className="label">User Name/ E-mail</label>
-        <input
-          onChange={handleName}
-          className="input"
-          value={name}
-          type="text"
-        />
-
-        <label className="label">Password</label>
-        <input
-          onChange={handlePassword}
-          className="input"
-          value={password}
-          type="password"
-        />
-  <div className="login-button">
-        <button onClick={handleSubmit} className="btn" type="submit">
-          Submit
-        </button>
+        <div>
+          <h2>LOGIN</h2>
         </div>
-      </form>
-    </div>
+
+        <div className="messages">
+          {errorMessage()}
+          {successMessage()}
+        </div>
+
+        <form>
+          <label className="label">User Name/ E-mail</label>
+          <input
+            onChange={handleName}
+            className="input"
+            value={name}
+            type="text"
+          />
+
+          <label className="label">Password</label>
+          <input
+            onChange={handlePassword}
+            className="input"
+            value={password}
+            type="password"
+          />
+          <div className="login-button">
+            <button onClick={handleSubmit} className="btn" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

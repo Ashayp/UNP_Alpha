@@ -53,6 +53,16 @@ const serachParentById = async (id) => {
   }
 };
 
+const serachParentByUserId = async (id) => {
+  try {
+    let parentInfo = await parent.findOne({ where: { userid: id } });
+    if (!parentInfo) throw "Could not find parent of that id!";
+    return parentInfo;
+  } catch (error) {
+    return error;
+  }
+};
+
 const updateParentById = async (id, body) => {
   try {
     let parentInfo = await parent.update(
@@ -149,5 +159,6 @@ module.exports = {
   lockKidAccount,
   unlockKidAccount,
   serachParentById,
-  updateParentById
+  updateParentById,
+  serachParentByUserId
 };

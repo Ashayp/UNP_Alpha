@@ -42,7 +42,7 @@ function Search() {
       "fromName": cookies.user.first_name+' '+cookies.user.last_name
     }
     axios
-      .post("http://localhost:8080/api/request/sendRequest", body)
+      .post("http://localhost:8080/api/request/sendRequest", body, config)
       .then((res) => {
         alert("Request sent!!");
       })

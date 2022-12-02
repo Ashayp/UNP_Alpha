@@ -122,7 +122,9 @@ const Profilepage = () => {
               <Menu.Item>
                 <Link to="/inbox">Inbox </Link>
               </Menu.Item>
-
+              <Menu.Item>
+                <Link to="/registerkid">Register Kid </Link>
+              </Menu.Item>
               <Menu.Item key="messenger">
                 <Link to="/messenger">Messenger </Link>
               </Menu.Item>
